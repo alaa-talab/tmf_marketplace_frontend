@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
+import React from "react";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -40,7 +41,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <AuthProvider>
             <ToastProvider>
-              <ClientLayout>{children}</ClientLayout>
+              <React.Suspense fallback={null}>
+                <ClientLayout>{children}</ClientLayout>
+              </React.Suspense>
             </ToastProvider>
           </AuthProvider>
         </ThemeProvider>
