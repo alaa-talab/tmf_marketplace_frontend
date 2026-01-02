@@ -24,7 +24,7 @@ The modern, high-performance frontend for **TMF Marketplace**. Built with **Next
 
 ### 1. Clone & Install
 ```bash
-git clone <your-frontend-repo-url>
+git clone https://github.com/alaa-talab/tmf_marketplace_frontend.git
 cd tmf_marketplace_frontend
 npm install
 ```
