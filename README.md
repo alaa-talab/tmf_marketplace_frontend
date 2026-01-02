@@ -9,6 +9,16 @@ The modern, high-performance frontend for **TMF Marketplace**. Built with **Next
 -   **Dashboard**: Secure upload area with drag-and-drop.
 -   **Auth**: JWT-based authentication flow.
 
+## 📸 Screenshots
+
+| Home Page | Login Page |
+|:---:|:---:|
+| <img src="screenshots/home.png" alt="Home Page" width="400"/> | <img src="screenshots/login.png" alt="Login Page" width="400"/> |
+
+| Gallery Page |
+|:---:|
+| <img src="screenshots/gallery.png" alt="Gallery Page" width="800"/> |
+
 ##  Tech Stack
 -   **Framework**: Next.js 16 (App Router)
 -   **Styling**: Tailwind CSS
