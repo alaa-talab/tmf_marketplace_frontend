@@ -11,7 +11,7 @@ export const LoadingScreen = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className="relative">
+            <div className="relative flex flex-col items-center justify-center">
                 <motion.div
                     animate={{
                         scale: [1, 1.2, 1],
@@ -29,7 +29,7 @@ export const LoadingScreen = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="text-center mt-4 text-sm font-medium tracking-widest uppercase text-muted-foreground"
+                    className="text-center mt-4 text-sm font-bold tracking-widest uppercase text-muted-foreground"
                 >
                     Loading TMF...
                 </motion.p>

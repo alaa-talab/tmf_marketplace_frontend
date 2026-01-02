@@ -21,7 +21,7 @@ export default function Home() {
         <FloatingImages />
 
         {/* Infinite Marquee Section */}
-        <section className="py-10 border-y border-white/5 bg-black/5 backdrop-blur-sm">
+        <section className="py-10 border-y border-white/5 backdrop-blur-sm">
           <InfiniteMarquee
             items={["Landscape", "Porterait", "Cyberpunk", "Minimal", "Abstract", "Nature", "Industrial", "Fashion", "Street", "Aerial"]}
             speed="slow"

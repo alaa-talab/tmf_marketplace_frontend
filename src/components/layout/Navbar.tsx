@@ -70,66 +70,68 @@ export const Navbar = () => {
     } as const;
 
     return (
-        <motion.nav
-            variants={{
-                visible: { y: 0 },
-                hidden: { y: -100 },
-            }}
-            animate={hidden ? "hidden" : "visible"}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className={cn(
-                "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl rounded-full transition-all duration-300 border border-transparent",
-                scrolled
-                    ? "bg-background/60 backdrop-blur-md border-white/10 shadow-lg py-3"
-                    : "bg-transparent py-5"
-            )}
-        >
-            <div className="px-6 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group">
-                    <motion.div style={{ rotate: logoRotation }}>
-                        <Logo className="w-8 h-8 group-hover:text-accent transition-colors" />
-                    </motion.div>
-                    <span className="font-sans font-bold text-lg tracking-tight group-hover:text-accent transition-colors">TMF</span>
-                </Link>
-
-                {/* Desktop Links */}
-                <div className="hidden md:flex items-center gap-6">
-                    <Link href="/gallery" className="text-sm font-medium hover:text-accent transition-colors">
-                        Gallery
+        <>
+            <motion.nav
+                variants={{
+                    visible: { y: 0 },
+                    hidden: { y: -100 },
+                }}
+                animate={hidden ? "hidden" : "visible"}
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                className={cn(
+                    "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl rounded-full transition-all duration-300 border border-transparent",
+                    scrolled
+                        ? "bg-background/60 backdrop-blur-md border-white/10 shadow-lg py-3"
+                        : "bg-transparent py-5"
+                )}
+            >
+                <div className="px-6 flex items-center justify-between">
+                    <Link href="/" className="flex items-center gap-2 group">
+                        <motion.div style={{ rotate: logoRotation }}>
+                            <Logo className="w-8 h-8 group-hover:text-accent transition-colors" />
+                        </motion.div>
+                        <span className="font-sans font-bold text-lg tracking-tight group-hover:text-accent transition-colors">TMF</span>
                     </Link>
-                    {user?.role === 'Uploader' && (
-                        <Link href="/dashboard" className="text-sm font-medium hover:text-accent transition-colors">
-                            Dashboard
+
+                    {/* Desktop Links */}
+                    <div className="hidden md:flex items-center gap-6">
+                        <Link href="/gallery" className="text-sm font-medium hover:text-accent transition-colors">
+                            Gallery
                         </Link>
-                    )}
-
-                    <div className="h-6 w-px bg-border" /> {/* Separator */}
-
-                    <ThemeToggle />
-
-                    {!user ? (
-                        <div className="flex items-center gap-3">
-                            <Link href="/auth/login" className="text-sm font-medium hover:text-foreground/80">
-                                Sign In
+                        {user?.role === 'Uploader' && (
+                            <Link href="/dashboard" className="text-sm font-medium hover:text-accent transition-colors">
+                                Dashboard
                             </Link>
-                            <Link href="/auth/register">
-                                <Button variant="primary" className="h-9 px-4 text-xs">
-                                    Get Started
-                                </Button>
-                            </Link>
-                        </div>
-                    ) : (
-                        <Button variant="ghost" className="h-9 px-4 text-xs" onClick={logout}>
-                            Sign Out
-                        </Button>
-                    )}
+                        )}
+
+                        <div className="h-6 w-px bg-border" /> {/* Separator */}
+
+                        <ThemeToggle />
+
+                        {!user ? (
+                            <div className="flex items-center gap-3">
+                                <Link href="/auth/login" className="text-sm font-medium hover:text-foreground/80">
+                                    Sign In
+                                </Link>
+                                <Link href="/auth/register">
+                                    <Button variant="primary" className="h-9 px-4 text-xs">
+                                        Get Started
+                                    </Button>
+                                </Link>
+                            </div>
+                        ) : (
+                            <Button variant="ghost" className="h-9 px-4 text-xs" onClick={logout}>
+                                Sign Out
+                            </Button>
+                        )}
+                    </div>
+
+                    {/* Mobile Menu Toggle */}
+                    <button className="md:hidden relative z-50" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                        {mobileMenuOpen ? <X /> : <CiMenuFries className='w-6 h-6' />}
+                    </button>
                 </div>
-
-                {/* Mobile Menu Toggle */}
-                <button className="md:hidden relative z-50" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                    {mobileMenuOpen ? <X /> : <CiMenuFries className='w-6 h-6' />}
-                </button>
-            </div>
+            </motion.nav>
 
             {/* Mobile Menu - Fullscreen Overlay */}
             <AnimatePresence>
@@ -193,6 +195,6 @@ export const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </motion.nav>
+        </>
     );
 };

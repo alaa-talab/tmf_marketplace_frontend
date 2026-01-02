@@ -34,7 +34,7 @@ export const Hero = () => {
     const clipPathDesktop = useTransform(
         scrollYProgress,
         [0, 1],
-        ["inset(10% 20% 5% 20% round 40px)", "inset(0% 0% 0% 0% round 0px)"]
+        ["inset(10% 10% 5% 10% round 40px)", "inset(0% 0% 0% 0% round 0px)"]
     );
 
     // Mobile clip path - less horizontal inset since screens are narrower
@@ -143,7 +143,7 @@ export const Hero = () => {
                         </div>
 
                         {/* Stats Grid */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10 max-w-md md:max-w-none mx-auto">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-md md:max-w-5xl mx-auto">
                             {stats.map((stat, index) => (
                                 <motion.div
                                     key={stat.label}
@@ -152,12 +152,12 @@ export const Hero = () => {
                                     transition={{ delay: index * 0.1 }}
                                     className="relative group"
                                 >
-                                    <div className="relative backdrop-blur-xl bg-white/5 dark:bg-black/40 border border-white/10 rounded-2xl md:rounded-3xl p-5 md:p-10 text-center hover:bg-white/10 dark:hover:bg-black/60 transition-all duration-500 group-hover:-translate-y-2">
+                                    <div className="relative backdrop-blur-xl bg-white/5 dark:bg-black/40 border border-white/10 rounded-2xl md:rounded-2xl p-5 md:p-6 text-center hover:bg-white/10 dark:hover:bg-black/60 transition-all duration-500 group-hover:-translate-y-2">
                                         {/* Glow effect */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl md:rounded-3xl" />
+                                        <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl md:rounded-2xl" />
 
-                                        <stat.icon className="w-4 h-4 md:w-12 md:h-12 mx-auto mb-3 md:mb-6 text-accent" />
-                                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2 tracking-tighter">
+                                        <stat.icon className="w-4 h-4 md:w-8 md:h-8 mx-auto mb-3 md:mb-4 text-accent" />
+                                        <div className="text-2xl sm:text-3xl md:text-3xl font-bold text-white mb-1 md:mb-2 tracking-tighter">
                                             {stat.value}
                                         </div>
                                         <div className="text-[10px] sm:text-xs md:text-xs text-white/50 uppercase tracking-[0.2em] font-medium">

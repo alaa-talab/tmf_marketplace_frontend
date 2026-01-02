@@ -23,10 +23,10 @@ export const InfiniteMarquee = ({
     }[speed];
 
     return (
-        <div className={cn("relative flex overflow-hidden w-full select-none", className)}>
+        <div className={cn("relative flex overflow-hidden w-full select-none bg-white dark:bg-background", className)}>
             {/* Gradient Masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-white dark:from-background to-transparent pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-white dark:from-background to-transparent pointer-events-none" />
 
             <div
                 className={cn(
